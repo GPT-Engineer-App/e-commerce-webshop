@@ -1,4 +1,5 @@
 import { Container, Text, VStack, Box, Image, Button, Heading, SimpleGrid } from "@chakra-ui/react";
+import { useCart } from "../hooks/useCart";
 import { FaShoppingCart } from "react-icons/fa";
 
 const products = [
@@ -8,6 +9,8 @@ const products = [
 ];
 
 const Index = () => {
+  const { addToCart } = useCart();
+
   return (
     <Container maxW="container.xl" py={10}>
       <VStack spacing={8}>
@@ -20,7 +23,7 @@ const Index = () => {
               <VStack spacing={4} mt={4}>
                 <Heading as="h3" size="md">{product.name}</Heading>
                 <Text fontSize="lg">{product.price}</Text>
-                <Button leftIcon={<FaShoppingCart />} colorScheme="teal" variant="solid">
+                <Button leftIcon={<FaShoppingCart />} colorScheme="teal" variant="solid" onClick={() => addToCart(product)}>
                   Add to Cart
                 </Button>
               </VStack>
