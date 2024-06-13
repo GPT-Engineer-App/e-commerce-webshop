@@ -1,6 +1,7 @@
 import { Box, Button, Heading, VStack, Text, Image } from "@chakra-ui/react";
 import { FaTrash } from "react-icons/fa";
 import { useCart } from "../hooks/useCart";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cartItems, removeFromCart, total } = useCart();
@@ -29,6 +30,9 @@ const Cart = () => {
       {cartItems.length > 0 && (
         <Box mt={5}>
           <Heading as="h3" size="lg">Total: {total}</Heading>
+          <Button as={Link} to="/payment" colorScheme="teal" variant="solid">
+            Proceed to Payment
+          </Button>
         </Box>
       )}
     </Box>
