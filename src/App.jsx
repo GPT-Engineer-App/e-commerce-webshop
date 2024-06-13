@@ -1,5 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar.jsx";
+import Index from "./pages/Index.jsx";
+import Cart from "./components/Cart.jsx";
 
 function App() {
   return (
