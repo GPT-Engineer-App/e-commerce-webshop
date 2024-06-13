@@ -1,7 +1,6 @@
 import { Box, VStack, Heading, Text } from "@chakra-ui/react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { useState } from "react";
-import IdealPayment from "ideal-payment";
 
 const PaymentOptions = ({ totalAmount }) => {
   const [paid, setPaid] = useState(false);
@@ -46,14 +45,8 @@ const PaymentOptions = ({ totalAmount }) => {
             </PayPalScriptProvider>
           </Box>
           <Box w="full">
-            <Heading as="h3" size="md" mb={3}>Pay with iDEAL</Heading>
-            <IdealPayment
-              amount={totalAmount}
-              currency="EUR"
-              description="Your purchase description"
-              onSuccess={handleSuccess}
-              onError={handleError}
-            />
+            <Heading as="h3" size="md" mb={3}>Pay with iDEAL (Placeholder)</Heading>
+            <Text>iDEAL payment integration will be implemented here.</Text>
           </Box>
           {error && <Text fontSize="xl" color="red.500">Payment error: {error.message}</Text>}
         </VStack>
